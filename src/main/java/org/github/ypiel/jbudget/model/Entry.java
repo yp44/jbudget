@@ -44,7 +44,10 @@ public record Entry(Account account, LocalDate dateOperation, LocalDate dateValu
     }
 
     public Entry removeCategory(EntryCategory category){
-        List<EntryCategory> categories = this.category.stream().filter(c -> category != EntryCategory.ALL && c != category).toList();
+        if (category == EntryCategory.ALL) {
+            return this;
+        }
+        List<EntryCategory> categories = this.category.stream().filter(c -> c != category).toList();
         return new Entry(account, dateOperation, dateValue, label, description, debit, credit, categories, newEntry, duplicate);
     }
 
