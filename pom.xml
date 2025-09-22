@@ -99,7 +99,6 @@
         <configuration>
           <source>21</source>
           <target>21</target>
-          <compilerArgs>--enable-preview</compilerArgs>
           <annotationProcessorPaths>
             <path>
               <groupId>org.projectlombok</groupId>
@@ -121,7 +120,7 @@
           </dependency>
         </dependencies>
         <configuration>
-          <argLine>@{argLine} --enable-preview -Dfile.encoding=UTF-8</argLine>
+          <argLine>@{argLine} -Dfile.encoding=UTF-8</argLine>
         </configuration>
       </plugin>
       <plugin>

@@ -192,7 +192,7 @@ public class MainController implements Initializable {
         totalColumn.setCellValueFactory(cellData ->
                 new SimpleObjectProperty<>(cellData.getValue().total()));
 
-        totalColumn.setCellFactory(_ -> new TableCell<>() {
+        totalColumn.setCellFactory(column -> new TableCell<>() {
             @Override
             protected void updateItem(BigDecimal item, boolean empty) {
                 super.updateItem(item, empty);
